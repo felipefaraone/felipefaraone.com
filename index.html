@@ -14,17 +14,17 @@
     <style>
         :root {
             --bg: #FFFFFF;
-            --surface: #FBF8F4;
+            --surface: #F7F7F5;
             --text: #1C1917;
-            --text-2: #57534E;
-            --text-3: #A8A29E;
-            --accent: #B8603D;
-            --accent-hover: #9C4F30;
-            --accent-soft: #F3E4DB;
-            --border: #E7E0D8;
-            --border-hover: #D6CFC5;
-            --highlight: #F5F0EB;
-            --warm-bg: #EDE6DC;
+            --text-2: #555555;
+            --text-3: #707070;
+            --accent: #2A6B5E;
+            --accent-hover: #1F5549;
+            --accent-soft: #E8F0EE;
+            --border: #E2E2E0;
+            --border-hover: #D0D0CE;
+            --highlight: #F0F0EE;
+            --warm-bg: #F0EFEC;
             --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
             --radius: 12px;
             --radius-sm: 8px;
@@ -127,11 +127,11 @@
         .btn svg { width: 15px; height: 15px; opacity: 0.8; }
 
         .btn-primary {
-            background: linear-gradient(135deg, #C4704B, #A85A38);
-            color: #FFF8F0; box-shadow: 0 1px 4px rgba(184,96,61,0.2);
+            background: linear-gradient(135deg, #327A6C, #2A6B5E);
+            color: #FFFFFF; box-shadow: 0 1px 4px rgba(42,107,94,0.2);
         }
 
-        .btn-primary:hover { box-shadow: 0 3px 12px rgba(184,96,61,0.3); transform: translateY(-1px); }
+        .btn-primary:hover { box-shadow: 0 3px 12px rgba(42,107,94,0.3); transform: translateY(-1px); }
 
         .btn-outline { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
         .btn-outline:active { background: var(--surface); }
@@ -160,7 +160,7 @@
             display: block; color: inherit;
         }
 
-        .case:hover { border-color: var(--accent-soft); box-shadow: 0 4px 20px rgba(184,96,61,0.07); transform: translateY(-2px); }
+        .case:hover { border-color: var(--accent-soft); box-shadow: 0 4px 20px rgba(42,107,94,0.07); transform: translateY(-2px); }
 
         .case-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; gap: 12px; flex-wrap: wrap; }
 
@@ -168,7 +168,7 @@
 
         .case-badge {
             font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 20px;
-            background: #16A34A; color: #FFF8F0;
+            background: #E8F0EE; color: #2A6B5E;
             letter-spacing: 0.3px; text-transform: uppercase; white-space: nowrap; flex-shrink: 0;
         }
 
@@ -197,6 +197,9 @@
         .case-arrow svg { width: 14px; height: 14px; transition: transform 0.25s ease; }
 
         .case:hover .case-arrow svg { transform: translateX(4px); }
+
+        .case-clickpoint { border-left: 3px solid #2A6B5E; }
+        .case-brasil { border-left: 3px solid #7A6340; }
 
         /* ABOUT */
         .about { padding: 52px 0; border-top: 1px solid var(--border); }
@@ -236,9 +239,9 @@
             cursor: pointer; transition: all 0.2s;
             min-width: 200px;
         }
-        .btn-copy:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+        .btn-copy:hover { border-color: #2A6B5E; color: #2A6B5E; transform: translateY(-1px); }
         .btn-copy svg { width: 15px; height: 15px; }
-        .btn-copy.copied { border-color: #16A34A; color: #16A34A; }
+        .btn-copy.copied { border-color: #2A6B5E; color: #2A6B5E; }
         .contact-links { margin-top: 24px; display: flex; justify-content: center; gap: 20px; }
         .contact-links a { font-size: 13px; font-weight: 500; color: var(--text-3); text-decoration: none; transition: color 0.2s; }
         .contact-links a:hover { color: var(--accent); }
@@ -332,7 +335,7 @@
                 <a class="section-link" href="https://github.com/felipefaraone/product-portfolio" target="_blank">All 11 cases <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
             </div>
 
-            <a class="case anim d3" href="https://github.com/felipefaraone/product-portfolio/tree/main/clickpoint/01-mcp-ai-assistant" target="_blank">
+            <a class="case case-clickpoint anim d3" href="https://github.com/felipefaraone/product-portfolio/tree/main/clickpoint/01-mcp-ai-assistant" target="_blank">
                 <div class="case-header">
                     <span class="case-company">ClickPoint Software · Enterprise B2B SaaS · 2025</span>
                     <span class="case-badge">Shipped</span>
@@ -348,7 +351,7 @@
                 <div class="case-arrow">Read full case study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
             </a>
 
-            <a class="case anim d4" href="https://github.com/felipefaraone/product-portfolio/tree/main/clickpoint/02-integrations-ecosystem" target="_blank">
+            <a class="case case-clickpoint anim d4" href="https://github.com/felipefaraone/product-portfolio/tree/main/clickpoint/02-integrations-ecosystem" target="_blank">
                 <div class="case-header">
                     <span class="case-company">ClickPoint Software · Enterprise B2B SaaS · 2024</span>
                     <span class="case-badge">Shipped</span>
@@ -368,7 +371,7 @@
                 <div class="case-arrow">Read full case study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
             </a>
 
-            <a class="case anim d5" href="https://github.com/felipefaraone/product-portfolio/tree/main/brasil-paralelo/01-gbb-subscription-transformation" target="_blank">
+            <a class="case case-brasil anim d5" href="https://github.com/felipefaraone/product-portfolio/tree/main/brasil-paralelo/01-gbb-subscription-transformation" target="_blank">
                 <div class="case-header">
                     <span class="case-company">Brasil Paralelo · B2C Streaming · 500k+ Subscribers · 2022</span>
                     <span class="case-badge">Shipped</span>
@@ -388,7 +391,7 @@
                 <div class="case-arrow">Read full case study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
             </a>
 
-            <a class="case anim d6" href="https://github.com/felipefaraone/product-portfolio/tree/main/brasil-paralelo/07-android-tv" target="_blank">
+            <a class="case case-brasil anim d6" href="https://github.com/felipefaraone/product-portfolio/tree/main/brasil-paralelo/07-android-tv" target="_blank">
                 <div class="case-header">
                     <span class="case-company">Brasil Paralelo · B2C Streaming · 500k+ Subscribers · 2022</span>
                     <span class="case-badge">Shipped</span>
