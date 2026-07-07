@@ -177,11 +177,15 @@ a{color:inherit}
 
 
 @media(max-width:760px){
-  .container{padding:0 22px}
-  .nav-inner{padding:14px 0}
+  .container{padding:0 20px}
+  .nav-inner{padding:13px 0;gap:12px}
+  .brand{min-width:0}
+  .brand b{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .brand span{display:none}
-  .nav-right a{padding:7px 9px;font-size:13px}
+  .nav-right{gap:8px;flex-shrink:0}
+  .nav-right a{padding:8px 12px;font-size:13.5px}
   .nav-right a[href="#work"],.nav-right a[href="#about"],.nav-right a[href*="linkedin"]{display:none}
+  .nav-cv{margin-left:0}
   .hero{padding:60px 0 50px}
   .hero h1{font-size:clamp(30px,8.6vw,42px);letter-spacing:-.028em}
   .hero h1 br{display:none}
