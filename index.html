@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <title>Felipe Faraone, Senior Product Manager</title>
@@ -41,7 +40,7 @@ a{color:inherit}
 .mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,250,252,.88);background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
 .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
 .brand b{font-weight:700;font-size:15px;letter-spacing:-.01em}
@@ -94,13 +93,15 @@ a{color:inherit}
 
 /* diagram */
 .diagram{margin:34px 0 6px;overflow-x:auto;padding-bottom:6px;position:relative}
-.diagram svg{display:block;min-width:720px;width:100%;height:auto}
+.diagram svg.dg-desktop{display:block;min-width:720px;width:100%;height:auto}
+.diagram svg.dg-mobile{display:none;width:100%;max-width:400px;height:auto;margin:0 auto}
 .dg-box{fill:color-mix(in srgb,var(--pl-text) 5%,transparent);stroke:color-mix(in srgb,var(--pl-text) 28%,transparent);rx:9}
 .dg-box-hl{fill:color-mix(in srgb,var(--pl-live) 10%,transparent);stroke:var(--pl-live);rx:9}
 .dg-label{font-family:var(--mono);font-size:11.5px;fill:var(--pl-text);letter-spacing:.02em}
 .dg-label-hl{font-family:var(--mono);font-size:11.5px;fill:var(--pl-live);letter-spacing:.02em}
 .dg-sub{font-family:var(--mono);font-size:9.5px;fill:var(--pl-accent);letter-spacing:.03em}
 .dg-arrow{stroke:color-mix(in srgb,var(--pl-text) 40%,transparent);stroke-width:1.2;marker-end:url(#arr)}
+.dg-mobile .dg-arrow{marker-end:url(#arrm)}
 .dg-cap{font-family:var(--mono);font-size:10px;fill:var(--pl-accent);letter-spacing:.05em}
 .flag-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-top:32px;padding-top:28px;border-top:1px solid color-mix(in srgb,var(--pl-text) 14%,transparent);position:relative}
 .flag-metrics{display:flex;gap:56px;flex-wrap:wrap}
@@ -150,7 +151,7 @@ a{color:inherit}
 .about-photo-wrap:hover .about-photo{filter:saturate(1)}
 .about .mono{color:var(--accent);margin-bottom:12px}
 .about p{font-size:15.5px;line-height:1.75;color:var(--muted)}
-@media(max-width:640px){.about-grid{grid-template-columns:1fr;padding:30px 26px}.about-photo{width:120px;height:144px}}
+@media(max-width:640px){.about-grid{grid-template-columns:1fr;padding:30px 26px}.about-photo-wrap{width:120px}.about-photo{width:120px;height:144px}}
 
 /* CONTACT */
 .contact{padding:24px 0 110px;text-align:center}
@@ -176,9 +177,31 @@ a{color:inherit}
 
 
 @media(max-width:760px){
-  .hero{padding:70px 0 58px}
-  .flag-panel{padding:38px 26px 36px;border-radius:14px}
-  .flag-metrics{gap:32px}
+  .container{padding:0 22px}
+  .nav-inner{padding:14px 0}
+  .brand span{display:none}
+  .nav-right a{padding:7px 9px;font-size:13px}
+  .nav-right a[href="#work"],.nav-right a[href="#about"],.nav-right a[href*="linkedin"]{display:none}
+  .hero{padding:60px 0 50px}
+  .hero h1{font-size:clamp(30px,8.6vw,42px);letter-spacing:-.028em}
+  .hero h1 br{display:none}
+  .hero-sub{font-size:16px;margin-top:22px}
+  .hero-actions{margin-top:30px}
+  .flag-panel{padding:34px 22px 32px;border-radius:14px}
+  .flag-panel h2{font-size:24px}
+  .flag-body{font-size:15px}
+  .browser{margin:28px 0 6px}
+  .diagram{margin:28px 0 2px;overflow:visible}
+  .dg-desktop{display:none !important}
+  .diagram svg.dg-mobile{display:block}
+  .flag-foot{flex-direction:column;align-items:flex-start;gap:22px;margin-top:26px;padding-top:24px}
+  .flag-metrics{gap:28px}
+  .flag-metric .val{font-size:24px}
+  .work{padding:54px 0 20px}
+  .case-row{padding:24px 14px;margin:0 -14px}
+  .case-row h3{font-size:19px}
+  .scope{padding:26px 0 46px}
+  .contact{padding:14px 0 84px}
 }
 </style>
 </head>
@@ -200,7 +223,7 @@ a{color:inherit}
 <header class="hero">
   <div class="container">
     <p class="mono rise r1">Senior Product Manager, Sydney</p>
-    <h1 class="rise r2">AI shipped to production.<br>Platforms that grow revenue.<br>Systems that <em>survive change</em>.</h1>
+    <h1 class="rise r2">AI shipped to production. <br>Platforms that grow revenue. <br>Systems that <em>survive change</em>.</h1>
     <p class="hero-sub rise r3">12+ years across enterprise B2B SaaS and consumer platforms at scale. Most recently: <strong>a production AI agent</strong> with schema-bound tool calls and validation at every boundary, and a subscription redesign that <strong>doubled annual revenue</strong> across 335,000 migrated subscribers. Zero downtime, zero billing errors.</p>
     <p class="hero-now rise r3"><span class="dot"></span>Currently sole PM at ClickPoint Software (US), serving Fortune 500 clients</p>
     <div class="hero-actions rise r4">
@@ -229,7 +252,7 @@ a{color:inherit}
       </div>
 
       <div class="diagram" aria-label="System diagram: client request flows through guided flow, schema-bound tools and human confirmation before execution">
-        <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg">
+        <svg class="dg-desktop" viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
               <path d="M0 0 L10 5 L0 10 z" fill="currentColor" opacity=".5"/>
@@ -266,6 +289,34 @@ a{color:inherit}
           <text x="797" y="80" class="dg-sub">LeadExec APIs</text>
 
           <text x="356" y="128" class="dg-cap">↑ EVERY PAYLOAD VALIDATED AGAINST SCHEMA BEFORE EXECUTION</text>
+        </svg>
+        <svg class="dg-mobile" viewBox="0 0 340 486" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <marker id="arrm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="currentColor" opacity=".5"/>
+            </marker>
+          </defs>
+          <text x="0" y="14" class="dg-cap">AGENT ARCHITECTURE · DETERMINISTIC</text>
+          <rect x="20" y="34" width="300" height="56" class="dg-box"/>
+          <text x="36" y="57" class="dg-label">Client request</text>
+          <text x="36" y="75" class="dg-sub">natural language</text>
+          <line x1="170" y1="90" x2="170" y2="116" class="dg-arrow" marker-end="url(#arrm)"/>
+          <rect x="20" y="120" width="300" height="56" class="dg-box"/>
+          <text x="36" y="143" class="dg-label">Guided flow</text>
+          <text x="36" y="161" class="dg-sub">deterministic steps</text>
+          <line x1="170" y1="176" x2="170" y2="202" class="dg-arrow" marker-end="url(#arrm)"/>
+          <rect x="20" y="206" width="300" height="56" class="dg-box"/>
+          <text x="36" y="229" class="dg-label">Schema-bound tools</text>
+          <text x="36" y="247" class="dg-sub">JSON schema validated</text>
+          <line x1="170" y1="262" x2="170" y2="288" class="dg-arrow" marker-end="url(#arrm)"/>
+          <rect x="20" y="292" width="300" height="56" class="dg-box-hl"/>
+          <text x="36" y="315" class="dg-label-hl">Confirmation gate</text>
+          <text x="36" y="333" class="dg-sub">human approves each step</text>
+          <line x1="170" y1="348" x2="170" y2="374" class="dg-arrow" marker-end="url(#arrm)"/>
+          <rect x="20" y="378" width="300" height="56" class="dg-box"/>
+          <text x="36" y="401" class="dg-label">Execution</text>
+          <text x="36" y="419" class="dg-sub">LeadExec APIs</text>
+          <text x="20" y="466" class="dg-cap">EVERY PAYLOAD VALIDATED BEFORE EXECUTION</text>
         </svg>
       </div>
 
