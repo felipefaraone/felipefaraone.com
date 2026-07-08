@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
 <title>Felipe Faraone, Senior Product Manager</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,11 +43,13 @@ a{color:inherit}
 .nav{position:sticky;top:0;z-index:50;background:rgba(250,250,252,.88);background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
 .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
-.brand b{font-weight:700;font-size:15px;letter-spacing:-.01em}
-.brand span{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.05em}
+.brand b{font-weight:800;font-size:16px;letter-spacing:-.025em}
+.brand i{font-style:normal;color:var(--accent)}
 .nav-right{display:flex;align-items:center;gap:2px}
 .nav-right a{font-size:13.5px;font-weight:500;color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:7px;transition:all .18s}
 .nav-right a:hover{background:var(--mist);color:var(--ink)}
+.nav-right a[target="_blank"]::after{content:"\2197";font-size:10px;margin-left:4px;opacity:.5}
+.nav-right a.nav-cv::after{content:none}
 .nav-cv{border:1px solid var(--line);margin-left:8px;color:var(--ink)!important;font-weight:600!important}
 .nav-cv:hover{border-color:var(--accent);background:var(--paper)!important}
 
@@ -64,7 +66,6 @@ a{color:inherit}
 .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--accent);opacity:.4;animation:pulse 2.4s ease-out infinite}
 @keyframes pulse{0%{transform:scale(.6);opacity:.5}70%{transform:scale(1.25);opacity:0}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.dot::after{animation:none;display:none}}
-.hero-actions{margin-top:38px;display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14.5px;font-weight:600;padding:13px 22px;border-radius:9px;text-decoration:none;transition:all .18s;border:1px solid transparent}
 .btn svg{width:15px;height:15px}
 .btn-solid{background:var(--ink);color:var(--paper)}
@@ -85,7 +86,9 @@ a{color:inherit}
 .flag-body strong{color:var(--pl-text);font-weight:600}
 
 /* browser frame */
-.browser{margin:38px 0 10px;border-radius:12px;overflow:hidden;border:1px solid color-mix(in srgb,var(--pl-text) 16%,transparent);box-shadow:0 24px 60px rgba(0,0,0,.35);position:relative}
+.browser{margin:38px 0 10px;border-radius:12px;overflow:hidden;border:1px solid color-mix(in srgb,var(--pl-text) 16%,transparent);box-shadow:0 24px 60px rgba(0,0,0,.35);position:relative;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
+.flag-panel:hover .browser{transform:translateY(-5px);box-shadow:0 34px 80px rgba(0,0,0,.45)}
+@media (prefers-reduced-motion:reduce){.flag-panel:hover .browser{transform:none}}
 .browser-bar{display:flex;align-items:center;gap:6px;padding:11px 14px;background:color-mix(in srgb,var(--pl-text) 7%,transparent);border-bottom:1px solid color-mix(in srgb,var(--pl-text) 10%,transparent)}
 .browser-bar i{width:9px;height:9px;border-radius:50%;background:color-mix(in srgb,var(--pl-text) 22%,transparent)}
 .browser-bar span{margin-left:10px;font-family:var(--mono);font-size:10.5px;color:var(--pl-sub);letter-spacing:.04em}
@@ -181,16 +184,14 @@ a{color:inherit}
   .nav-inner{padding-top:13px;padding-bottom:13px;gap:16px}
   .brand{min-width:0}
   .brand b{font-size:16.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .brand span{display:none}
   .nav-right{gap:8px;flex-shrink:0}
-  .nav-right a[href="#work"],.nav-right a[href="#about"],.nav-right a[href="#contact"],.nav-right a[href*="linkedin"]{display:none}
+  .nav-right a[href="#about"],.nav-right a[href="#contact"],.nav-right a[href*="linkedin"],.nav-right a[href*="github"]{display:none}
   .nav-cv{margin-left:0;background:var(--ink);color:var(--paper)!important;border-color:var(--ink);padding:9px 20px;font-size:14px}
   .nav-cv:hover{background:var(--panel);border-color:var(--panel)}
   .hero{padding:60px 0 50px}
   .hero h1{font-size:clamp(30px,8.6vw,42px);letter-spacing:-.028em}
   .hero h1 br{display:none}
   .hero-sub{font-size:16px;margin-top:22px}
-  .hero-actions{margin-top:30px}
   .flag-panel{padding:34px 22px 32px;border-radius:14px}
   .flag-panel h2{font-size:24px}
   .flag-body{font-size:15px}
@@ -213,11 +214,11 @@ a{color:inherit}
 
 <nav class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="#"><b>Felipe Faraone</b><span>SYD · UTC+10</span></a>
+    <a class="brand" href="#"><b>Felipe Faraone<i>.</i></b></a>
     <div class="nav-right">
-      <a href="#work">Case studies</a>
       <a href="#about">About</a>
       <a href="https://www.linkedin.com/in/felipefaraone/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/felipefaraone/product-portfolio" target="_blank">GitHub</a>
       <a href="#contact">Contact</a>
       <a class="nav-cv" href="./Felipe_Faraone_CV.pdf?v=3" target="_blank">CV</a>
     </div>
@@ -229,13 +230,6 @@ a{color:inherit}
     <p class="mono rise r1">Senior Product Manager, Sydney</p>
     <h1 class="rise r2">AI shipped to production. <br>Platforms that grow revenue. <br>Systems that <em>survive change</em>.</h1>
     <p class="hero-sub rise r3">12+ years turning complex enterprise problems into shipped products.</p>
-    <div class="hero-actions rise r4">
-      <a class="btn btn-solid" href="#work">Read the case studies</a>
-      <a class="btn btn-ghost" href="https://github.com/felipefaraone/product-portfolio" target="_blank">
-        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        GitHub
-      </a>
-    </div>
   </div>
 </header>
 
@@ -353,7 +347,7 @@ a{color:inherit}
       <div class="meta"><span class="mono">ClickPoint Software · 2024</span></div>
       <div>
         <h3>Compliance integrations platform</h3>
-        <p>Six real-time compliance integrations covering consent, fraud, phone verification and Do Not Call screening, built on a redesigned inheritance model. Configuration defined once, applied everywhere.</p>
+        <p>Enterprise clients repeated the same setup for every campaign, and inbound leads carried no compliance checks. Rebuilt the model around inheritance and shipped six real time validation integrations: configuration defined once, applied everywhere.</p>
       </div>
       <div class="case-metric"><div class="val">6 integrations</div><div class="lab">One setup, zero repetition</div></div>
       <span class="go">Case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
@@ -363,7 +357,7 @@ a{color:inherit}
       <div class="meta"><span class="mono">Brasil Paralelo · B2C streaming · 2022</span></div>
       <div>
         <h3>Subscription transformation</h3>
-        <p>Consolidated 15+ fragmented plans into three technology-differentiated tiers, then coordinated four squads to migrate every active subscriber with zero downtime and zero billing errors.</p>
+        <p>15+ plans differentiated by content, with no upgrade path. Consolidated them into three technology based tiers, then coordinated four squads to migrate every active subscriber with zero downtime and zero billing errors.</p>
       </div>
       <div class="case-metric"><div class="val">2× revenue</div><div class="lab">335,634 subscribers migrated</div></div>
       <span class="go">Case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
@@ -416,7 +410,7 @@ a{color:inherit}
         LinkedIn
       </a>
     </div>
-    <p class="contact-alt">Prefer email? <a href="mailto:felipefaraone@gmail.com">Open your mail app</a> · <a href="https://github.com/felipefaraone/product-portfolio" target="_blank">GitHub</a></p>
+    <p class="contact-alt">Or <a href="mailto:felipefaraone@gmail.com">open your mail app</a></p>
   </div>
 </section>
 
