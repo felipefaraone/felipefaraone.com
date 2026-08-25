@@ -83,6 +83,10 @@ a{color:inherit}
 .flag-live{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--pl-live);border:1px solid color-mix(in srgb,var(--pl-live) 40%,transparent);padding:5px 11px;border-radius:99px;display:inline-flex;align-items:center;gap:7px}
 .flag-live i{width:6px;height:6px;border-radius:50%;background:var(--pl-live);display:inline-block}
 .flag-panel h2{font-size:clamp(26px,3.4vw,36px);font-weight:700;letter-spacing:-.025em;line-height:1.15;max-width:660px;position:relative}
+.flag-context{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 30px;margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.09);position:relative}
+.flag-context div{min-width:0}
+.flag-context dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--pl-accent);margin:0 0 5px}
+.flag-context dd{margin:0;font-size:14.5px;color:var(--pl-sub);line-height:1.45}
 .flag-body{margin-top:18px;font-size:16px;line-height:1.7;color:var(--pl-sub);max-width:660px;position:relative}
 .flag-body strong{color:var(--pl-text);font-weight:600}
 
@@ -196,6 +200,8 @@ a{color:inherit}
   .flag-panel{padding:34px 22px 32px;border-radius:14px}
   .flag-panel h2{font-size:24px}
   .flag-body{font-size:15px}
+  .flag-context{grid-template-columns:repeat(2,1fr);gap:18px 20px;margin-top:22px}
+  .flag-context dd{font-size:13.5px}
   .browser{margin:28px 0 6px}
   .diagram{margin:28px 0 2px;overflow:visible}
   .dg-desktop{display:none !important}
@@ -242,7 +248,14 @@ a{color:inherit}
         <span class="flag-live"><i></i>In production</span>
       </div>
       <h2>An AI agent that enterprise clients run their onboarding through.</h2>
-      <p class="flag-body">Setup used to span multiple screens and require technical knowledge. I designed and shipped a deterministic agent: <strong>guided flows, schema-bound tool calls, and human confirmation before every execution</strong>. No free-form generation ever touches client data. In production across multiple companies since October 2025.</p>
+      <p class="flag-body">LeadExec is how companies buy sales leads and get them to the right salesperson in seconds. Setup used to span multiple screens and require technical knowledge. I designed and shipped a deterministic agent: <strong>guided flows, schema-bound tool calls, and human confirmation before every execution</strong>. No free-form generation ever touches client data. In production across multiple companies since October 2025.</p>
+
+      <dl class="flag-context">
+        <div><dt>Company</dt><dd>ClickPoint, Phoenix, USA</dd></div>
+        <div><dt>Product</dt><dd>LeadExec, lead management</dd></div>
+        <div><dt>Role</dt><dd>Senior Product Manager, end to end</dd></div>
+        <div><dt>Clients</dt><dd>Rentokil, TruGreen</dd></div>
+      </dl>
 
       <div class="browser">
         <div class="browser-bar"><i></i><i></i><i></i><span>LeadExec · AI Assist</span></div>
@@ -341,7 +354,14 @@ a{color:inherit}
         <span class="flag-live"><i></i>Shipped · 4 squads</span>
       </div>
       <h2>A subscription model that doubled revenue and halved churn.</h2>
-      <p class="flag-body">People were cancelling because the pricing made no sense. Seven separate subscriptions sold as 15+ plans, newer members paying less for more, and no reason for anyone to ever upgrade. I replaced the lot with three plans where <strong>everyone gets the full catalogue and you pay for how you watch, not what you watch</strong>: screens, downloads, picture quality. Then I moved all 335,634 existing members onto it without a single billing error.</p>
+      <p class="flag-body">Brasil Paralelo built its own streaming platform instead of renting one, and subscriptions are the whole business. People were cancelling because the pricing made no sense. Seven separate subscriptions sold as 15+ plans, newer members paying less for more, and no reason for anyone to ever upgrade. I replaced the lot with three plans where <strong>everyone gets the full catalogue and you pay for how you watch, not what you watch</strong>: screens, downloads, picture quality. Then I moved all 335,634 existing members onto it without a single billing error.</p>
+
+      <dl class="flag-context">
+        <div><dt>Company</dt><dd>Brasil Paralelo, São Paulo</dd></div>
+        <div><dt>Product</dt><dd>In-house streaming platform</dd></div>
+        <div><dt>Role</dt><dd>Product Manager, end to end</dd></div>
+        <div><dt>Team</dt><dd>4 squads</dd></div>
+      </dl>
 
       <div class="browser">
         <div class="browser-bar"><i></i><i></i><i></i><span>Brasil Paralelo · plan structure, reconstructed</span></div>
